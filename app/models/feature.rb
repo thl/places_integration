@@ -6,10 +6,14 @@ class Feature < PlacesResource
   end
   
   def feature_type_ids
-    if self.feature_type.instance_of? Array
-      return self.feature_type.collect{|type| type.id.to_i }
-    else
-      return [self.feature_type.id.to_i]
+    begin
+      if self.feature_type.instance_of? Array
+        return self.feature_type.collect{|type| type.id.to_i }
+      else
+        return [self.feature_type.id.to_i]
+      end
+    rescue
+      return []
     end
   end
 end
