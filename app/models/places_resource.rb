@@ -15,4 +15,5 @@ class PlacesResource < ActiveResource::Base
     self.site = 'http://places.thlib.org/'
   end  
   self.timeout = 100
+  self.format = :xml
 end
