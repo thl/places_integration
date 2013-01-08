@@ -6,8 +6,8 @@ class PlacesResource < ActiveResource::Base
   elsif hostname == 'dev.thlib.org'
     self.site = 'http://127.0.0.1/'
     headers['Host'] = 'dev.places.thlib.org'
-#  elsif hostname.ends_with? 'local'
-#    self.site = 'http://localhost/master/places/'
+  #elsif hostname.ends_with?('local') || hostname.starts_with?('vpn-user')
+  #  self.site = 'http://localhost/places/'
   elsif hostname =~ /sds.+\.itc\.virginia\.edu/
     self.site = 'http://127.0.0.1/'
     headers['Host'] = 'places.thlib.org'
