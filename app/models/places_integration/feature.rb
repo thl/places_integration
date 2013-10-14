@@ -8,15 +8,16 @@ module PlacesIntegration
 
     # Using nested active resource. This is problematic when caching
     def feature_type_ids
-      begin
-        if self.feature_type.instance_of? Array
-          return self.feature_type.collect{|type| (type.instance_of?(Hash) ? type['id'] : type.id).to_i }
-        else
-          return [(self.feature_type.instance_of?(Hash) ? self.feature_type['id'] : self.feature_type.id).to_i]
-        end
-      rescue
-        return []
-      end
+      self.feature_types.collect{|type| type.id.to_i}
+    end
+    
+    def context_feature
+      ps = self.perspectives
+      per = ps.detect{|p| p.code=='pol.admin.hier'}
+      ancestors = per.nil? ? ps.collect(&:ancestors).flatten.size : per.ancestors
+      parent = ancestors.detect{|a| a.id != self.id && a.feature_types.detect{|ft| ft.id=='29'}}
+      parent = self.parents.first if parent.nil?
+      return parent
     end
   end
 end
