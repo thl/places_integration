@@ -1,7 +1,12 @@
 module PlacesIntegration
   class Feature < PlacesResource
+    acts_as_active_resource_family_tree
     headers['Host'] = PlacesResource.headers['Host'] if !PlacesResource.headers['Host'].blank?
-
+    
+    def ancestors
+      self.perspectives.collect{ |p| p.ancestors.collect{ |a| a.id.to_i } }.flatten.uniq.collect{|i| Feature.find(i) }
+    end
+    
     def self.find_by_geo_code(geo_code_type, geo_code)
       Feature.get("by_geo_code/#{geo_code}", :geo_code_type => geo_code_type)
     end
