@@ -1,0 +1,7 @@
+# Localization file for Tibetan of places integration plugin.
+bo:
+    activeresource:
+        models:
+            places_integration/feature:
+                one: 'place'
+                other: 'places'

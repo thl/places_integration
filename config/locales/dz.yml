@@ -1,0 +1,7 @@
+# Localization file for Dzongkha of places integration plugin.
+dz:
+    activeresource:
+        models:
+            places_integration/feature:
+                one: 'place'
+                other: 'places'

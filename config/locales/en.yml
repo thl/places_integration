@@ -1,0 +1,7 @@
+# Localization file for English of places integration plugin.
+en:
+    activeresource:
+        models:
+            places_integration/feature:
+                one: 'place'
+                other: 'places'

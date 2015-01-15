@@ -1,0 +1,7 @@
+# Localization file for Chinese of places integration plugin.
+zh:
+    activeresource:
+        models:
+            places_integration/feature:
+                one: 'place'
+                other: 'places'
