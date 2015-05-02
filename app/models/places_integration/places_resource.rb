@@ -6,7 +6,7 @@ module PlacesIntegration
       headers['Host'] = "dev-places.#{InterfaceUtils::Server.get_domain}"
     when InterfaceUtils::Server::STAGING
       self.site = 'http://127.0.0.1/'
-      headers['Host'] = "staging.places.#{InterfaceUtils::Server.get_domain}"
+      headers['Host'] = "staging-places.#{InterfaceUtils::Server.get_domain}"
     when InterfaceUtils::Server::PRODUCTION
       self.site = 'http://127.0.0.1/'
       headers['Host'] = "places.#{InterfaceUtils::Server.get_domain}"
