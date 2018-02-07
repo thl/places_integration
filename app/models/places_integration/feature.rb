@@ -1,6 +1,8 @@
 module PlacesIntegration
   class Feature < PlacesResource
     acts_as_active_resource_family_tree
+    acts_as_indexable uid_prefix: 'places'
+    
     headers['Host'] = PlacesResource.headers['Host'] if !PlacesResource.headers['Host'].blank?
     
     def ancestors
