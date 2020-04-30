@@ -2,15 +2,15 @@ module PlacesIntegration
   class PlacesResource < ActiveResource::Base
     case InterfaceUtils::Server.environment
     when InterfaceUtils::Server::DEVELOPMENT
-      self.site = "http://dev-places.#{InterfaceUtils::Server.get_domain}"
+      self.site = "http://dev-places.#{InterfaceUtils::Server.get_domain}/"
     when InterfaceUtils::Server::STAGING
-      self.site = "http://staging-places.#{InterfaceUtils::Server.get_domain}"
+      self.site = "http://staging-places.#{InterfaceUtils::Server.get_domain}/"
     when InterfaceUtils::Server::PRODUCTION
-      self.site = "http://places.#{InterfaceUtils::Server.get_domain}"
+      self.site = "http://places.#{InterfaceUtils::Server.get_domain}/"
     when InterfaceUtils::Server::LOCAL
       self.site = 'http://localhost/shanti/places/'
     else
-      self.site = "http://places.#{InterfaceUtils::Server.get_domain}"
+      self.site = "http://places.#{InterfaceUtils::Server.get_domain}/"
     end
 
     self.timeout = 100
