@@ -3,8 +3,6 @@ module PlacesIntegration
     case InterfaceUtils::Server.environment
     when InterfaceUtils::Server::DEVELOPMENT
       self.site = "http://dev-places.kmaps.virginia.edu/"
-    when InterfaceUtils::Server::STAGING
-      self.site = "http://staging-places.kmaps.virginia.edu/"
     when InterfaceUtils::Server::PRODUCTION
       self.site = "http://places.kmaps.virginia.edu/"
     when InterfaceUtils::Server::LOCAL
