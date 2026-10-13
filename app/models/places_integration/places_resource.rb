@@ -5,7 +5,7 @@ module PlacesIntegration
       self.site = "https://dev-places.kmaps.virginia.edu/"
     when InterfaceUtils::Server::PRODUCTION
       self.site = "https://places.kmaps.virginia.edu/"
-    when InterfaceUtils::Server::LOCAL
+    when InterfaceUtils::Server::LOCAL, InterfaceUtils::Server::NOD_LOCAL
       self.site = 'http://localhost/shanti/places/'
     else
       self.site = "https://places.kmaps.virginia.edu/"
